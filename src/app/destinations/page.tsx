@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo, useState, useEffect } from "react"
+import { useMemo, useState, useEffect, Suspense } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -13,7 +13,9 @@ import { Star, Users, MapPin, Filter } from "lucide-react"
 
 type Goal = 'food' | 'culture' | 'nature' | 'city'
 
-export default function DestinationsPage() {
+export const dynamic = 'force-dynamic'
+
+function DestinationsContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
 
@@ -176,6 +178,14 @@ export default function DestinationsPage() {
         </div>
       </section>
     </main>
+  )
+}
+
+export default function DestinationsPage() {
+  return (
+    <Suspense fallback={<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">Loading...</div>}>
+      <DestinationsContent />
+    </Suspense>
   )
 }
 
