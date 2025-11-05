@@ -169,19 +169,7 @@ export default function FoodDestinations() {
                     <Button 
                       className="w-full bg-green-600 hover:bg-green-700" 
                       onClick={() => {
-                        const routeMap = {
-                          'Wuhan': '/destinations/wuhan/roadmap',
-                          'Hong Kong': '/destinations/hongkong/roadmap',
-                          'Beijing': '/destinations/beijing/roadmap',
-                          'Chengdu': '/destinations/chengdu/roadmap',
-                          'Guangzhou': '/destinations/guangzhou/roadmap'
-                        }
-                        const path = routeMap[destination.name as keyof typeof routeMap]
-                        if (path) {
-                          router.push(path)
-                        } else {
-                          console.log(`View ${destination.name} food map`)
-                        }
+                        router.push(`/destinations?city=${encodeURIComponent(destination.name)}`)
                       }}
                     >
                       View Food Map
