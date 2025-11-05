@@ -70,7 +70,7 @@ export default function RoadmapContent() {
               <p className="text-gray-700 mt-2">Use real reviews and curated suggestions to quickly match your trip preferences.</p>
             </div>
             <div className="w-full md:w-96 h-48 rounded-lg overflow-hidden shadow">
-              <img src="/images/experiences/zhangjiajie.jpg" alt={`${cityName} city view`} className="w-full h-full object-cover" />
+              <img src="/images/roadmap/wuhan-city-view.jpg" alt={`${cityName} city view`} className="w-full h-full object-cover" />
               <div className="text-[10px] text-white/90 bg-black/40 px-2 py-1">Photo credit: demo image</div>
             </div>
           </div>
