@@ -101,12 +101,12 @@ export default function RoadmapContent() {
               </div>
               <div>
                 <label className="block text-sm font-medium mb-2">Duration</label>
-                <Select value={duration} onValueChange={(v)=> setDuration(v as any)}>
+                <Select value={duration || 'any'} onValueChange={(v)=> setDuration((v === 'any' ? '' : (v as any)))}>
                   <SelectTrigger>
                     <SelectValue placeholder="Any" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Any</SelectItem>
+                    <SelectItem value="any">Any</SelectItem>
                     <SelectItem value="half-day">Half-day</SelectItem>
                     <SelectItem value="1d">1 day</SelectItem>
                     <SelectItem value="2-3d">2–3 days</SelectItem>
@@ -116,12 +116,12 @@ export default function RoadmapContent() {
               </div>
               <div>
                 <label className="block text-sm font-medium mb-2">Season</label>
-                <Select value={season} onValueChange={(v)=> setSeason(v as any)}>
+                <Select value={season || 'any'} onValueChange={(v)=> setSeason((v === 'any' ? '' : (v as any)))}>
                   <SelectTrigger>
                     <SelectValue placeholder="Any" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Any</SelectItem>
+                    <SelectItem value="any">Any</SelectItem>
                     <SelectItem value="spring">Spring</SelectItem>
                     <SelectItem value="summer">Summer</SelectItem>
                     <SelectItem value="autumn">Autumn</SelectItem>
