@@ -70,7 +70,7 @@ export default function DestinationsContent() {
             <CardContent className="space-y-5">
               <div>
                 <label className="block text-sm font-medium mb-2">City</label>
-                <Select value={cityId} onValueChange={setCityId}>
+                <Select value={cityId || undefined} onValueChange={setCityId}>
                   <SelectTrigger>
                     <SelectValue placeholder="All cities" />
                   </SelectTrigger>
@@ -86,7 +86,10 @@ export default function DestinationsContent() {
                 <label className="block text-sm font-medium mb-2">People</label>
                 <div className="flex items-center gap-3">
                   <Users className="w-4 h-4 text-gray-500" />
-                  <Input type="number" min={1} max={20} value={people} onChange={(e) => setPeople(parseInt(e.target.value || '1', 10))} className="w-24" />
+                  <Input type="number" min={1} max={20} value={people} onChange={(e) => {
+                    const n = parseInt(e.target.value || '1', 10)
+                    setPeople(Number.isNaN(n) ? 1 : n)
+                  }} className="w-24" />
                 </div>
               </div>
 
@@ -98,12 +101,12 @@ export default function DestinationsContent() {
 
               <div>
                 <label className="block text-sm font-medium mb-2">Goal</label>
-                <Select value={goal || ''} onValueChange={(v)=> setGoal((v as Goal) || '')}>
+                <Select value={goal || 'any'} onValueChange={(v)=> setGoal(v === 'any' ? '' : (v as Goal))}>
                   <SelectTrigger>
                     <SelectValue placeholder="Any" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Any</SelectItem>
+                    <SelectItem value="any">Any</SelectItem>
                     <SelectItem value="food">Food</SelectItem>
                     <SelectItem value="culture">Culture</SelectItem>
                     <SelectItem value="nature">Nature</SelectItem>
