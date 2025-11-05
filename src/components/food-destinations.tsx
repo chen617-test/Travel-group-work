@@ -169,7 +169,8 @@ export default function FoodDestinations() {
                     <Button 
                       className="w-full bg-green-600 hover:bg-green-700" 
                       onClick={() => {
-                        router.push(`/destinations?city=${encodeURIComponent(destination.name)}`)
+                        const slug = destination.name.toLowerCase().replace(/\s+/g, '')
+                        router.push(`/destinations/${slug}/roadmap`)
                       }}
                     >
                       View Food Map
