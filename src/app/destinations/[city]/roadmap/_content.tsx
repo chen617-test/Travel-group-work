@@ -27,6 +27,8 @@ export default function RoadmapContent() {
 
   const [cityId, setCityId] = useState(initialCity)
   const [tab, setTab] = useState<'tours'|'guides'>( (search.get('tab') as any) || 'tours')
+  const [duration, setDuration] = useState<'half-day'|'1d'|'2-3d'|'4d+'|''>('')
+  const [season, setSeason] = useState<'spring'|'summer'|'autumn'|'winter'|''>('')
 
   useEffect(() => {
     const qs = new URLSearchParams(search.toString())
@@ -36,7 +38,14 @@ export default function RoadmapContent() {
   }, [cityId, tab])
 
   const cityName = cities.find(c => c.id === cityId)?.name || 'City'
-  const cityTours = tours.filter(t => t.city === cityId)
+  const cityTours = useMemo(() => {
+    return tours.filter(t => {
+      if (t.city !== cityId) return false
+      if (duration && t.duration !== duration) return false
+      if (season && !t.bestSeason.includes(season)) return false
+      return true
+    })
+  }, [cityId, duration, season])
   const cityGuides = guides.filter(g => g.city === cityId)
 
   return (
@@ -57,7 +66,7 @@ export default function RoadmapContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900">{cityName} Road Map｜City · Nature · Heritage</h1>
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900">Trip Roadmap｜City · Nature · Heritage</h1>
               <p className="text-gray-700 mt-2">Use real reviews and curated suggestions to quickly match your trip preferences.</p>
             </div>
             <div className="w-full md:w-96 h-48 rounded-lg overflow-hidden shadow">
@@ -92,11 +101,33 @@ export default function RoadmapContent() {
               </div>
               <div>
                 <label className="block text-sm font-medium mb-2">Duration</label>
-                <div className="text-sm text-gray-600">Half-day / 1d / 2–3d / 4d+ (demo)</div>
+                <Select value={duration} onValueChange={(v)=> setDuration(v as any)}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Any" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="">Any</SelectItem>
+                    <SelectItem value="half-day">Half-day</SelectItem>
+                    <SelectItem value="1d">1 day</SelectItem>
+                    <SelectItem value="2-3d">2–3 days</SelectItem>
+                    <SelectItem value="4d+">4+ days</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               <div>
                 <label className="block text-sm font-medium mb-2">Season</label>
-                <div className="text-sm text-gray-600">Spring / Summer / Autumn / Winter (demo)</div>
+                <Select value={season} onValueChange={(v)=> setSeason(v as any)}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Any" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="">Any</SelectItem>
+                    <SelectItem value="spring">Spring</SelectItem>
+                    <SelectItem value="summer">Summer</SelectItem>
+                    <SelectItem value="autumn">Autumn</SelectItem>
+                    <SelectItem value="winter">Winter</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
             </CardContent>
           </Card>
@@ -133,6 +164,13 @@ export default function RoadmapContent() {
                         </div>
                         <div className="text-sm text-gray-700">Stops: {t.stops.map(s=>s.name).join(' → ')}</div>
                         <div className="text-sm text-gray-700">⭐ {t.reviews.rating} · {t.reviews.count} reviews · {t.reviews.tags.join(' | ')}</div>
+                        {t.reviews.snippets?.length ? (
+                          <ul className="list-disc pl-5 space-y-1 text-sm text-gray-600">
+                            {t.reviews.snippets.slice(0, 2).map((s, i) => (
+                              <li key={i} className="italic">“{s}”</li>
+                            ))}
+                          </ul>
+                        ) : null}
                         <div className="flex gap-2">
                           <Button className="bg-green-600 hover:bg-green-700">View Route & Schedule</Button>
                           <Button variant="outline">Open in Map</Button>

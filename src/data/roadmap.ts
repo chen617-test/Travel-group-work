@@ -169,6 +169,29 @@ export const guides: Guide[] = [
     reviews: { rating: 4.8, count: 95, snippet: 'Knows perfect evening spots.' },
     avatar: '/images/logo.svg'
   }
+  ,
+  {
+    id: 'guide-wang-004',
+    city: 'wuhan',
+    name: 'Ms. Wang',
+    langs: ['Mandarin','English','Cantonese'],
+    expertise: ['family','heritage'],
+    features: ['Stroller-friendly routes','Rest-stop planning'],
+    routes: ['wuhan-heritage-walking-1d','wuhan-heritage-halfday'],
+    reviews: { rating: 4.7, count: 134, snippet: 'Thoughtful pacing for kids and seniors.' },
+    avatar: '/images/logo.svg'
+  },
+  {
+    id: 'guide-luo-005',
+    city: 'wuhan',
+    name: 'Mr. Luo',
+    langs: ['Mandarin','English','Japanese'],
+    expertise: ['food','riverfront'],
+    features: ['Snack-hopping itineraries','Ferry timing tips'],
+    routes: ['wuhan-food-morning-halfday','wuhan-bund-sunset-1d'],
+    reviews: { rating: 4.9, count: 88, snippet: 'Great food recommendations and sunset timing.' },
+    avatar: '/images/logo.svg'
+  }
 ]
 
 
