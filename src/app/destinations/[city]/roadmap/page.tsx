@@ -2,6 +2,7 @@ import { Suspense } from "react"
 import RoadmapContent from "./_content"
 
 export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 export default function RoadmapPage() {
   return (
