@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Slider } from "@/components/ui/slider"
 import { cities, recommendations } from "@/data/destinations"
-import { Star, Users, Filter } from "lucide-react"
+import { Star, Users, MapPin, Filter } from "lucide-react"
 
 type Goal = 'food' | 'culture' | 'nature' | 'city'
 
@@ -142,7 +142,7 @@ export default function DestinationsContent() {
                         <div className="flex items-center justify-between">
                           <CardTitle className="text-xl">{rec.title}</CardTitle>
                           <div className="text-sm text-gray-600 flex items-center">
-                            <img src="/icon.png" alt="location" className="w-4 h-4 mr-1" />{cities.find(c=>c.id===rec.cityId)?.name}
+                            <MapPin className="w-4 h-4 mr-1 text-green-600" />{cities.find(c=>c.id===rec.cityId)?.name}
                           </div>
                         </div>
                         {rec.subtitle && (

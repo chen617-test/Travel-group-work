@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Star, Utensils } from "lucide-react"
+import { MapPin, Star, Utensils } from "lucide-react"
 
 export default function FoodDestinations() {
   const router = useRouter()
@@ -106,8 +106,8 @@ export default function FoodDestinations() {
                       alt={destination.name}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center">
-                      <img src="/icon.png" alt="location" className="inline-block w-4 h-4 mr-1" />
+                    <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <MapPin className="inline-block w-4 h-4 mr-1" />
                       {destination.name}
                     </div>
                   </div>

@@ -10,7 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { cities } from "@/data/destinations"
 import { guides, tours } from "@/data/roadmap"
-import { ChevronRight, Camera, Calendar, Navigation } from "lucide-react"
+import { MapPin, ChevronRight, Camera, Calendar, Navigation } from "lucide-react"
 
 const toId = (name: string) => name.toLowerCase().replace(/\s+/g, '')
 
@@ -175,7 +175,7 @@ export default function RoadmapContent() {
                         {t.reviews.snippets?.length ? (
                           <ul className="list-disc pl-5 space-y-1 text-sm text-gray-600">
                             {t.reviews.snippets.slice(0, 2).map((s, i) => (
-                              <li key={i} className="italic">"{s}"</li>
+                              <li key={i} className="italic">“{s}”</li>
                             ))}
                           </ul>
                         ) : null}

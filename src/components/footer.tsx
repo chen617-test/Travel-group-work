@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Mail, Phone, Facebook, Twitter, Instagram, Youtube, Camera, Copyright } from "lucide-react"
+import { MapPin, Mail, Phone, Facebook, Twitter, Instagram, Youtube, Camera, Copyright } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -11,8 +11,8 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-1 lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <img src="/icon.png" alt="Guidy" className="h-8 w-8" />
-              <span className="text-xl font-bold">Guidy</span>
+              <MapPin className="h-8 w-8 text-green-400" />
+              <span className="text-xl font-bold">ChinaTravel</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
               Explore the beautiful scenery, rich culture, and culinary traditions of China. We are committed to providing you with the highest quality China travel experiences, making every journey an unforgettable memory.
@@ -62,7 +62,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
-                <img src="/icon.png" alt="location" className="h-4 w-4" />
+                <MapPin className="h-4 w-4 text-green-400" />
                 <span className="text-gray-300">88 Jianguo Road, Chaoyang District, Beijing</span>
               </div>
               <div className="flex items-center space-x-2">
@@ -71,7 +71,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-green-400" />
-                <span className="text-gray-300">info@guidy.com</span>
+                <span className="text-gray-300">info@chinatravel.com</span>
               </div>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function Footer() {
               <div className="mt-2 text-xs text-gray-400">
                 <span className="flex items-center">
                   <Copyright className="h-3 w-3 mr-1" />
-                  2024 Guidy. All rights reserved.
+                  2024 ChinaTravel. All rights reserved.
                 </span>
               </div>
               <div className="mt-1 text-xs text-gray-400">

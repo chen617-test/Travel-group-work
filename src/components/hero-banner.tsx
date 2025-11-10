@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Search, Star, Clock } from "lucide-react"
+import { Search, MapPin, Star, Clock } from "lucide-react"
 
 export default function HeroBanner() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -68,7 +68,7 @@ export default function HeroBanner() {
             {/* Search Form */}
             <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-4 p-2 bg-white rounded-lg shadow-lg">
               <div className="flex-1 relative">
-                <img src="/icon.png" alt="location" className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5" />
+                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
                 <Input
                   type="text"
                   placeholder="where do u want to go what do you want today?"

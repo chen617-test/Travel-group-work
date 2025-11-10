@@ -3,7 +3,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, Star, Camera, Mountain, Building, TreePine } from "lucide-react"
+import { Calendar, MapPin, Star, Camera, Mountain, Building, TreePine } from "lucide-react"
 
 export default function SpecialExperiences() {
   // Experience categories
@@ -257,7 +257,7 @@ export default function SpecialExperiences() {
                           <span>Best: {experience.bestSeason}</span>
                         </div>
                         <div className="flex items-center text-gray-600">
-                          <img src="/icon.png" alt="duration" className="h-4 w-4 mr-2" />
+                          <MapPin className="h-4 w-4 mr-2" />
                           <span>{experience.duration}</span>
                         </div>
                         <div className="flex items-center text-gray-600">
