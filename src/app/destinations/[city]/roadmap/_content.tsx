@@ -10,7 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { cities } from "@/data/destinations"
 import { guides, tours } from "@/data/roadmap"
-import { MapPin, ChevronRight, Camera, Calendar, Navigation } from "lucide-react"
+import { ChevronRight, Camera, Calendar, Navigation } from "lucide-react"
 
 const toId = (name: string) => name.toLowerCase().replace(/\s+/g, '')
 
