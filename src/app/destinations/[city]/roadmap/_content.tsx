@@ -162,12 +162,20 @@ export default function RoadmapContent() {
                         <div className="flex flex-wrap gap-2">
                           {t.landscape.map((l, i)=> (<Badge key={i} variant="secondary" className="text-xs">{l}</Badge>))}
                         </div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-2xl font-bold text-green-600">
+                            {t.priceRange.min === t.priceRange.max 
+                              ? `¥${t.priceRange.min}` 
+                              : `¥${t.priceRange.min}-${t.priceRange.max}`}
+                          </span>
+                          <span className="text-sm text-gray-500">per person</span>
+                        </div>
                         <div className="text-sm text-gray-700">Stops: {t.stops.map(s=>s.name).join(' → ')}</div>
                         <div className="text-sm text-gray-700">⭐ {t.reviews.rating} · {t.reviews.count} reviews · {t.reviews.tags.join(' | ')}</div>
                         {t.reviews.snippets?.length ? (
                           <ul className="list-disc pl-5 space-y-1 text-sm text-gray-600">
                             {t.reviews.snippets.slice(0, 2).map((s, i) => (
-                              <li key={i} className="italic">“{s}”</li>
+                              <li key={i} className="italic">"{s}"</li>
                             ))}
                           </ul>
                         ) : null}

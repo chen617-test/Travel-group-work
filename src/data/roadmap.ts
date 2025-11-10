@@ -22,6 +22,7 @@ export type Tour = {
   stops: Array<{ time: string; name: string; tip?: string }>
   reviews: { rating: number; count: number; tags: string[]; snippets: string[] }
   coverImage: { url: string; alt: string; credit?: string }
+  priceRange: { min: number; max: number }
 }
 
 export type Guide = {
@@ -62,7 +63,8 @@ export const tours: Tour[] = [
     coverImage: {
       url: '/images/roadmap/jianghan-road.jpg',
       alt: 'Jianghan Road clock tower at dusk'
-    }
+    },
+    priceRange: { min: 168, max: 268 }
   },
   {
     id: 'wuhan-food-morning-halfday',
@@ -80,7 +82,8 @@ export const tours: Tour[] = [
       { time: '11:00', name: 'Hankou Snack Street', tip: 'Dessert stop' }
     ],
     reviews: { rating: 4.7, count: 210, tags: ['foodies','family'], snippets: ['Authentic breakfast!'] },
-    coverImage: { url: '/images/roadmap/hubu-alley.jpg', alt: 'Hubu Alley snacks' }
+    coverImage: { url: '/images/roadmap/hubu-alley.jpg', alt: 'Hubu Alley snacks' },
+    priceRange: { min: 98, max: 158 }
   },
   {
     id: 'wuhan-bund-sunset-1d',
@@ -98,7 +101,8 @@ export const tours: Tour[] = [
       { time: '20:00', name: 'Night skyline' }
     ],
     reviews: { rating: 4.6, count: 145, tags: ['photography'], snippets: ['Great skyline views'] },
-    coverImage: { url: '/images/roadmap/hankou-sunset.jpg', alt: 'Hankou Bund sunset' }
+    coverImage: { url: '/images/roadmap/hankou-sunset.jpg', alt: 'Hankou Bund sunset' },
+    priceRange: { min: 198, max: 298 }
   },
   {
     id: 'wuhan-heritage-halfday',
@@ -115,7 +119,8 @@ export const tours: Tour[] = [
       { time: '12:00', name: 'Lihuangpi Road' }
     ],
     reviews: { rating: 4.5, count: 96, tags: ['easy-pace'], snippets: ['Leisurely walk'] },
-    coverImage: { url: '/images/roadmap/wuhan-heritage.jpg', alt: 'Heritage buildings' }
+    coverImage: { url: '/images/roadmap/wuhan-heritage.jpg', alt: 'Heritage buildings' },
+    priceRange: { min: 128, max: 198 }
   },
   {
     id: 'wuhan-riverfront-halfday',
@@ -132,7 +137,8 @@ export const tours: Tour[] = [
       { time: '11:00', name: 'Bridge lookout' }
     ],
     reviews: { rating: 4.4, count: 80, tags: ['family'], snippets: ['Relaxing route'] },
-    coverImage: { url: '/images/roadmap/wuhan-bund.jpg', alt: 'Riverside view' }
+    coverImage: { url: '/images/roadmap/wuhan-bund.jpg', alt: 'Riverside view' },
+    priceRange: { min: 118, max: 178 }
   }
 ]
 
