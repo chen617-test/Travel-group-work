@@ -34,6 +34,7 @@ export type Guide = {
   routes: string[]
   reviews: { rating: number; count: number; snippet: string }
   avatar: string
+  priceCny: number
 }
 
 export const tours: Tour[] = [
@@ -145,7 +146,8 @@ export const guides: Guide[] = [
     features: ['Senior-friendly pace','Avoid crowds','Rainy-day alternatives'],
     routes: ['wuhan-heritage-walking-1d'],
     reviews: { rating: 4.9, count: 182, snippet: 'Great angles for photos, engaging stories.' },
-    avatar: '/images/logo.svg'
+    avatar: '/images/logo.svg',
+    priceCny: 399
   },
   {
     id: 'guide-li-002',
@@ -156,7 +158,8 @@ export const guides: Guide[] = [
     features: ['Kid-friendly','Snack list expert'],
     routes: ['wuhan-food-morning-halfday'],
     reviews: { rating: 4.7, count: 120, snippet: 'Great for families and food lovers.' },
-    avatar: '/images/logo.svg'
+    avatar: '/images/logo.svg',
+    priceCny: 299
   },
   {
     id: 'guide-zhang-003',
@@ -167,7 +170,8 @@ export const guides: Guide[] = [
     features: ['Blue-hour shots','Hidden angles'],
     routes: ['wuhan-bund-sunset-1d','wuhan-riverfront-halfday'],
     reviews: { rating: 4.8, count: 95, snippet: 'Knows perfect evening spots.' },
-    avatar: '/images/logo.svg'
+    avatar: '/images/logo.svg',
+    priceCny: 449
   }
   ,
   {
@@ -179,7 +183,8 @@ export const guides: Guide[] = [
     features: ['Stroller-friendly routes','Rest-stop planning'],
     routes: ['wuhan-heritage-walking-1d','wuhan-heritage-halfday'],
     reviews: { rating: 4.7, count: 134, snippet: 'Thoughtful pacing for kids and seniors.' },
-    avatar: '/images/logo.svg'
+    avatar: '/images/logo.svg',
+    priceCny: 349
   },
   {
     id: 'guide-luo-005',
@@ -190,7 +195,8 @@ export const guides: Guide[] = [
     features: ['Snack-hopping itineraries','Ferry timing tips'],
     routes: ['wuhan-food-morning-halfday','wuhan-bund-sunset-1d'],
     reviews: { rating: 4.9, count: 88, snippet: 'Great food recommendations and sunset timing.' },
-    avatar: '/images/logo.svg'
+    avatar: '/images/logo.svg',
+    priceCny: 379
   }
 ]
 

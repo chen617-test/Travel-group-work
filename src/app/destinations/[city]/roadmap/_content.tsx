@@ -193,8 +193,12 @@ export default function RoadmapContent() {
                       Expertise: {g.expertise.join(', ')} · Features: {g.features.join(', ')}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="flex items-center justify-between">
+                  <CardContent className="space-y-4">
                     <div className="text-sm text-gray-700">Representative routes: {g.routes.join(', ')}</div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl font-bold text-green-600">¥{g.priceCny}</span>
+                      <span className="text-sm text-gray-500">per day</span>
+                    </div>
                     <div className="flex gap-2">
                       <Button>View Sample Plan</Button>
                       <Button className="bg-green-600 hover:bg-green-700">Contact</Button>

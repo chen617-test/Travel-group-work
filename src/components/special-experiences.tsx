@@ -83,7 +83,7 @@ export default function SpecialExperiences() {
       name: "West Lake Spring Colors - Hangzhou",
       subtitle: "From Huagang Fish Viewing to Su Causeway Spring Dawn",
       description: "One scene at every step from Huagang Fish Viewing to Su Causeway Spring Dawn.",
-      image: "https://z-cdn-media.chatglm.cn/files/7bf23d36-b75f-45cf-968f-56b80ff85e11_west%20lake.jpg?auth_key=1762245866-629c396822204658b4cdc27d89eb0da5-0-5cfb9553cd2b4f440830d4b004390f23",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzS2QP-S1T2fuICCF6TTPL1F-DKTCRqnKfyQ&s",
       landscapeType: "Lake",
       bestSeason: "Mar-Apr",
       duration: "Half day",
